@@ -11,7 +11,7 @@ async function main() {
     
 
   // Dapr subscription routes orders topic to this route
-  server.pubsub.subscribe(PUBSUB_NAME, "orders-queue", (data) => console.log("Subscriber received: " + JSON.stringify(data)));
+  server.pubsub.subscribe(PUBSUB_NAME, "queue://orders-queue", (data) => console.log("Subscriber received: " + JSON.stringify(data)));
  
   await server.start();
   await publish();
