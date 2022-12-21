@@ -11,9 +11,9 @@ async function main() {
 
 
   // Dapr subscription routes orders topic to this route
-  server.pubsub.subscribe(PUBSUB_NAME, "topic:retail/orders", (data) => console.log("Subscriber received: " + data));
+  // server.pubsub.subscribe(PUBSUB_NAME, "topic:retail/orders", (data) => console.log("Subscriber received: " + data));
   // Dapr subscription routes orders queue to this route
-  // server.pubsub.subscribe(PUBSUB_NAME, "queue:retail/orders", (data) => console.log("Subscriber received: " + data));
+  server.pubsub.subscribe(PUBSUB_NAME, "queue:orders-queue", (data) => console.log("Subscriber received: " + data));
 
 
 
